@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora con Jest</title>
+  </head>
+  <body>
+    <h1>Calculadora</h1>
+
+    <!-- Formulario para ingresar valores -->
+    <form id="calculatorForm">
+      <label for="inputA">Número A:</label>
+      <input type="number" id="inputA" required />
+      <br />
+      <label for="inputB">Número B:</label>
+      <input type="number" id="inputB" required />
+      <br />
+      <label for="operation">Operación:</label>
+      <select id="operation" required>
+        <option value="sumar">Sumar</option>
+        <option value="restar">Restar</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="dividir">Dividir</option>
+      </select>
+      <br />
+      <button type="button" onclick="realizarCalculo()">
+        Realizar Cálculo
+      </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="result"></div>
+
+    <script src="app.js"></script>
+    <script>
+      // Función para realizar el cálculo manualmente en el navegador
+      function realizarCalculo() {
+        // Obtener valores del formulario
+        const numA = parseFloat(document.getElementById("inputA").value);
+        const numB = parseFloat(document.getElementById("inputB").value);
+        const operacion = document.getElementById("operation").value;
+
+        // Realizar la operación seleccionada
+        let resultado;
+        switch (operacion) {
+          case "sumar":
+            resultado = sumar(numA, numB);
+            break;
+          case "restar":
+            resultado = restar(numA, numB);
+            break;
+          case "multiplicar":
+            // Agrega la función multiplicar si es necesario
+            resultado = numA * numB;
+            break;
+          case "dividir":
+            // Agrega la función dividir si es necesario
+            resultado = dividir(numA, numB);
+            break;
+          default:
+            resultado = "Operación no válida";
+        }
+
+        // Mostrar el resultado en la página
+        document.getElementById("result").innerText = `Resultado: ${resultado}`;
+      }
+    </script>
+  </body>
+</html>
