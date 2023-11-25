@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'nombre-de-tu-instalacion-nodejs'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -11,8 +15,10 @@ pipeline {
         stage('Build and Test') {
             steps {
                 script {
-                    // Ejecutar comandos para construir y probar tu proyecto
+                    // Instalar dependencias
                     sh 'npm install'
+                    
+                    // Ejecutar pruebas
                     sh 'npm test'
                 }
             }
