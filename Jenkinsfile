@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'nombre-de-tu-instalacion-nodejs'
+        nodejs 'NodeJsNPM'
     }
 
     stages {
