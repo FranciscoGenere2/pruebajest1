@@ -3,7 +3,7 @@ const { sumar, restar, dividir } = require("../app");
 
 // Prueba para la función de suma
 test("sumar 5 + 3 es igual a 8", () => {
-  expect(sumar(5, 3)).toBe(8);
+  expect(sumar(5, 3)).toBe(5);
 });
 
 // Prueba para la función de resta
